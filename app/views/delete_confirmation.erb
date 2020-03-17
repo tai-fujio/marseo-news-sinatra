@@ -1,0 +1,9 @@
+<h2>Do you really want to delete <%= @post.name %>?</h2>
+
+<form method="POST" action="/delete_post<%= @post.id %>">
+  <button type="submit">YES</button>
+</form>
+<form method="GET" action="/">
+  <button type="submit">NO</button>
+</form>
+

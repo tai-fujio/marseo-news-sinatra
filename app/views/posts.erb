@@ -1,0 +1,26 @@
+<% @posts.each do |post| %>
+  <div class="flex-container">
+    <div class="card-post">
+      <img src="https://picsum.photos/id/<%=post.id + 500%>/200/300">
+        <div class="card-post-infos">
+          <h2><a href=<%= post.url %>><%= post.name %></h2>
+          <a>Votes: <%= post.votes %></a>
+        </div>
+        <div class="card-post-actions">
+
+          <form method="POST" action="/upvote_post<%= post.id %>">
+            <button class="btn btn-block btn-primary like"><i class="fa fa-thumbs-up"></i> Like</button>
+          </form>
+
+          <form method="POST" action="/update_information<%= post.id %>">
+            <button type="submit" class="btn btn-info update">Update</button>
+          </form>
+
+          <form method="POST" action="/delete_confirmation<%= post.id %>">
+            <button type="submit" class="btn btn-danger delete">Delete</button>
+          </form>
+
+        </div>
+    </div>
+  </div>
+<% end %>

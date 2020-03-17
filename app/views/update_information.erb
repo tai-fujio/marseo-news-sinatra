@@ -1,0 +1,11 @@
+<h1>What would you like to update?</h1>
+<h2><%= @post.name %> (<%= @post.url %>)</h2>
+
+<form method="POST" action="/update_post<%= @post.id %>">
+  <p>Post Title: <input type="text" name="name"></p>
+  <p>Post Url: <input type="text" name="url"></p>
+  <input type="submit">
+</form>
+
+<p>if you leave fields empty they will not be updated</p>
+<p>url must be HTTP or HTTPs</p>
